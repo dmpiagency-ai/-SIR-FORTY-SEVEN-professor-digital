@@ -61,22 +61,22 @@ const OnboardingPage = () => {
         {step === 1 && (
           <motion.div key="step1" className="w-full max-w-sm relative z-10"
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
-            <div className="glass-card p-6">
+            <div className="glass-card-dark p-6">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles size={20} className="text-accent" />
                 <h2 className="text-xl font-bold text-white">Personaliza o Teu Caminho</h2>
               </div>
-              <p className="text-white/60 text-sm mb-6">Escolhe o teu objectivo. Rumo certo pra quem não sabe começar.</p>
+              <p className="text-white/90 text-sm mb-6">Escolhe o teu objectivo. Rumo certo pra quem não sabe começar.</p>
               
               <div className="space-y-3">
                 {options.map((opt) => (
                   <button key={opt.key} onClick={() => handleSelect(opt.key)}
-                    className={`glass-card p-4 w-full text-left transition-all ${selected === opt.key ? 'glow-blue border border-primary/40' : 'border border-white/20'}`}>
+                    className={`glass-card-dark p-4 w-full text-left transition-all ${selected === opt.key ? 'glow-blue border border-primary/40' : 'border border-white/20'}`}>
                     <div className="flex items-start gap-3">
                       <span className="text-2xl">{opt.emoji}</span>
                       <div className="flex-1">
                         <h3 className="text-white font-semibold text-sm">{opt.title}</h3>
-                        <p className="text-white/60 text-xs mt-1">{opt.desc}</p>
+                        <p className="text-white/90 text-xs mt-1">{opt.desc}</p>
                         <p className="text-accent text-[10px] mt-2 font-medium">{opt.plan}</p>
                       </div>
                       {selected === opt.key && <CheckCircle2 size={20} className="text-primary" />}
@@ -91,19 +91,19 @@ const OnboardingPage = () => {
         {step === 2 && (
           <motion.div key="step2" className="w-full max-w-sm relative z-10"
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}>
-            <div className="glass-card p-6 text-center">
+            <div className="glass-card-dark p-6 text-center">
               <div className="w-16 h-16 mx-auto bg-primary/20 rounded-full flex items-center justify-center mb-4">
                 <CheckCircle2 size={32} className="text-primary" />
               </div>
               <h2 className="text-xl font-bold text-white mb-2">Caminho Definido! 🎉</h2>
-              <p className="text-white/60 text-sm mb-6">
+              <p className="text-white/90 text-sm mb-6">
                 {selected === 'afiliado' && 'Vais aprender a ganhar comissões como afiliado.'}
                 {selected === 'gestor' && 'Vais aprender a gerir tráfego para clientes.'}
                 {selected === 'both' && 'Vais combinar afiliação e gestão de tráfego.'}
               </p>
-              <div className="glass-card p-4 mb-6 text-left">
-                <p className="text-xs text-muted-foreground mb-2">📋 O teu plano de 14 dias:</p>
-                <ul className="text-xs space-y-1 text-white/80">
+              <div className="glass-card-dark p-4 mb-6 text-left">
+                <p className="text-xs text-white/80 mb-2">📋 O teu plano de 14 dias:</p>
+                <ul className="text-xs space-y-1 text-white/90">
                   <li>• Dias 1-3: Completar aulas 1-3</li>
                   <li>• Dias 4-7: Primeiros exercícios práticos</li>
                   <li>• Dias 8-10: Criar primeira campanha</li>
